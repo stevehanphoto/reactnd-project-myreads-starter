@@ -1,9 +1,11 @@
 import React from 'react'
-// import * as BooksAPI from './BooksAPI'
+import * as BooksAPI from './BooksAPI'
 import './App.css'
+import BookShelf from './BookShelf'
 
 class BooksApp extends React.Component {
   state = {
+    books: [],
     /**
      * TODO: Instead of using this state variable to keep track of which page
      * we're on, use the URL in the browser's address bar. This will ensure that
@@ -12,7 +14,15 @@ class BooksApp extends React.Component {
      */
     showSearchPage: false
   }
-
+  componentDidMount() {
+    BooksAPI.getAll()
+      .then((books) => {
+        this.setState(() => ({
+          books
+        }))
+        console.log(books);
+      })
+  }
   render() {
     return (
       <div className="app">
@@ -44,6 +54,22 @@ class BooksApp extends React.Component {
             </div>
             <div className="list-books-content">
               <div>
+                <BookShelf 
+                  title={"Currently Reading 2"}  
+                  shelfType={"currentlyReading"}
+                  books={this.state.books}  
+                />
+                <BookShelf
+                  title={"Want to Read 2"}
+                  shelfType={"wantToRead"}
+                  books={this.state.books}
+                />
+                  <BookShelf
+                    title={"Read 2"}
+                    shelfType={"read"}
+                    books={this.state.books}
+                  />
+      
                 <div className="bookshelf">
                   <h2 className="bookshelf-title">Currently Reading</h2>
                   <div className="bookshelf-books">
