@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import _ from 'lodash'
 import BooksGrid from './BooksGrid'
 
 class BookShelf extends Component {
     static propTypes = {
-        title: PropTypes.string.isRequired,
         shelf: PropTypes.string.isRequired,
         books: PropTypes.array.isRequired
     }
     render() {
-        const { title, books, shelf } = this.props
+        const { books, shelf } = this.props
         const showingBooks = books.filter(function(book) {
             return book.shelf === shelf;
         })
@@ -17,7 +17,7 @@ class BookShelf extends Component {
         return (
             <div>
                 <div className="bookshelf">
-                    <h2 className="bookshelf-title">{title}</h2>
+                    <h2 className="bookshelf-title">{_.startCase(shelf)}</h2>
                     <BooksGrid books={showingBooks} />
                 </div>
             </div>

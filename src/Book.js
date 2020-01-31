@@ -4,9 +4,11 @@ import BookShelfChanger from "./BookShelfChanger";
 
 class Book extends Component {
   static propTypes = {
-    book: PropTypes.array.isRequired
+    book: PropTypes.object.isRequired
   };
   render() {
+    const { book } = this.props;
+
     return (
       <div className="book">
         <div className="book-top">
@@ -15,13 +17,13 @@ class Book extends Component {
             style={{
               width: 128,
               height: 193,
-              backgroundImage: `url(${this.props.book.imageLinks.thumbnail})`
+              backgroundImage: `url(${book.imageLinks.thumbnail})`
             }}
           ></div>
-          <BookShelfChanger book={this.props.book} />
+          <BookShelfChanger book={book} />
         </div>
-        <div className="book-title">{this.props.book.title}</div>
-        <div className="book-authors">{this.props.book.authors[0]}</div>
+        <div className="book-title">{book.title}</div>
+        <div className="book-authors">{book.authors[0]}</div>
       </div>
     );
   }

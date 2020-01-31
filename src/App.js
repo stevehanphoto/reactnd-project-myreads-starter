@@ -15,7 +15,6 @@ class BooksApp extends React.Component {
         this.setState(() => ({
           books
         }))
-        console.log(books);
       })
   }
   render() {
@@ -32,17 +31,14 @@ class BooksApp extends React.Component {
               <div className="list-books-content">
                 <div>
                   <BookShelf
-                    title={"Currently Reading"}
                     shelf={"currentlyReading"}
                     books={this.state.books}
                   />
                   <BookShelf
-                    title={"Want to Read"}
                     shelf={"wantToRead"}
                     books={this.state.books}
                   />
                   <BookShelf
-                    title={"Read"}
                     shelf={"read"}
                     books={this.state.books}
                   />

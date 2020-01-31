@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-class BooksShelfChanger extends Component {
+class BookShelfChanger extends Component {
   static propTypes = {
-    books: PropTypes.array.isRequired
+    book: PropTypes.object.isRequired
   };
   render() {
     return (
@@ -20,4 +20,4 @@ class BooksShelfChanger extends Component {
   }
 }
 
-export default BooksShelfChanger
+export default BookShelfChanger
