@@ -22,20 +22,19 @@ class SearchPage extends Component {
         this.setState(() => ({
             query: query
         }))
-        console.log('updateQuery')
+        
+        /* Should I put this in a Lifecycle method? */
         BooksAPI.search(this.state.query)
             .then((books) => {
                 this.setState(() => ({
                     books
                 }))
-                console.log(this.state)
             })
     }
     render() {
         return (
           <div className="search-books">
             <div className="search-books-bar">
-              {/*<button className="close-search" onClick={() => this.setState({ showSearchPage: false })}>Close</button>*/}
               <Link className="close-search" to="/">
                 Close
               </Link>
