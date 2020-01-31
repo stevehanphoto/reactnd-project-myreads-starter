@@ -5,14 +5,13 @@ import BooksGrid from './BooksGrid'
 class BookShelf extends Component {
     static propTypes = {
         title: PropTypes.string.isRequired,
-        shelfType: PropTypes.string.isRequired,
+        shelf: PropTypes.string.isRequired,
         books: PropTypes.array.isRequired
     }
     render() {
-        const { title, books, shelfType } = this.props
+        const { title, books, shelf } = this.props
         const showingBooks = books.filter(function(book) {
-            console.log('this.props.shelfType', shelfType)
-            return book.shelf === shelfType;
+            return book.shelf === shelf;
         })
 
         return (
