@@ -4,7 +4,12 @@ import BookShelfChanger from "./BookShelfChanger";
 
 class Book extends Component {
   static propTypes = {
-    book: PropTypes.object.isRequired
+    book: PropTypes.object.isRequired,
+    handleShelfChange: PropTypes.func.isRequired
+  };
+  handleShelfChange = (newShelf) => {
+    console.log("handleShelfChange", this.props.book, newShelf);
+    this.props.handleShelfChange(this.props.book, newShelf);
   };
   render() {
     const { book } = this.props;
@@ -20,7 +25,7 @@ class Book extends Component {
               backgroundImage: `url(${book.imageLinks.thumbnail})`
             }}
           ></div>
-          <BookShelfChanger book={book} />
+          <BookShelfChanger book={book} onShelfChange={this.handleShelfChange} />
         </div>
         <div className="book-title">{book.title}</div>
         <div className="book-authors">{book.authors[0]}</div>
