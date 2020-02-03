@@ -26,16 +26,6 @@ class BooksApp extends React.Component {
     });
     this.setState({ books: updatedBooks });
   };
-/*
-  handleShelfChange = (book, newShelf) => {
-    //console.log("handleShelfChange", book, newShelf);
-    BooksAPI.update(book, newShelf).then(() => {
-        book.shelf = newShelf;
-        this.setState(currentState => ({
-          books: currentState.books.filter(currentBook => currentBook.id !== book.id).concat([book])
-        }));
-      });   
-  };*/
   render() {
     return (
       <div className="app">

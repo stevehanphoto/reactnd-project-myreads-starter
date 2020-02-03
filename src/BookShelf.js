@@ -1,34 +1,27 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import _ from 'lodash'
 import BooksGrid from './BooksGrid'
 
-class BookShelf extends Component {
-  static propTypes = {
-    shelf: PropTypes.string.isRequired,
-    books: PropTypes.array.isRequired,
-    handleShelfChange: PropTypes.func.isRequired
-  };
-  handleShelfChange = (book, newShelf) => {
-    console.log("handleShelfChange", book, newShelf);
-    this.props.handleShelfChange(book, newShelf);
-  };
-  render() {
-    const { books, shelf } = this.props;
-    const showingBooks = books.filter(book => book.shelf === shelf);
-
-    return (
-      <div>
-        <div className="bookshelf">
-          <h2 className="bookshelf-title">{_.startCase(shelf)}</h2>
-          <BooksGrid
-            books={showingBooks}
-            handleShelfChange={this.handleShelfChange}
-          />
-        </div>
+const BookShelf = (props) => {
+  const showingBooks = props.books.filter(book => book.shelf === props.shelf);
+  return (
+    <div>
+      <div className="bookshelf">
+        <h2 className="bookshelf-title">{_.startCase(props.shelf)}</h2>
+        <BooksGrid
+          books={showingBooks}
+          handleShelfChange={(book, newShelf) => props.handleShelfChange(book, newShelf) }
+        />
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
+
+BookShelf.propTypes = {
+  shelf: PropTypes.string.isRequired,
+  books: PropTypes.array.isRequired,
+  handleShelfChange: PropTypes.func.isRequired
+};
 
 export default BookShelf;

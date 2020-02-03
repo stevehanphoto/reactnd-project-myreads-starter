@@ -13,36 +13,13 @@ class SearchPage extends Component {
     books: [],
     query: ""
   };
-  /*
-  componentDidMount() {
-    console.log("componentDidMount()");
-    BooksAPI.search(this.state.query).then(books => {
-      this.setState(() => ({
-        books
-      }));
-    });
-  }*/
-  /*
-  isOnShelf = (book) => {
-    this.props.booksOnShelf(bookOnShelf => {
-      if (bookOnShelf.id === book.id) {
-        book.shelf = bookOnShelf.shelf;
-        return book;
-      };
-      book.shelf = 'none'
-      return book;
-    });
-  }*/
-
   updateQuery = query => {
     this.setState({ query: query });
     this.searchBook(query);
   }
   getShelf = id => {
     const book = this.props.booksOnShelf.filter((book) => book.id === id);
-    //console.log(id, book)
     return book.length ? book[0].shelf : null;
-//    return book.length ? book[0].shelf : 'none';
   };
   searchBook(query) {
     if (query && query.length > 0) {
@@ -59,33 +36,14 @@ class SearchPage extends Component {
           this.resetSearch();
         });
     }
+    else {
+      this.resetSearch();
+    }
   };
   resetSearch() {
     this.setState({ books: [] });
   }
-
-/*  handleShelfChange = (book, newShelf) => {
-    //console.log("handleShelfChange", book, newShelf);
-    BooksAPI.update(book, newShelf).then(() => {
-      book.shelf = newShelf;
-      this.setState(currentState => ({
-        books: currentState.books.filter(currentBook => currentBook.id !== book.id).concat([book])
-      }));
-    });
-  };*/
-  /*
   handleShelfChange = (book, newShelf) => {
-    BooksAPI.update(book, newShelf);
-    const updatedBooks = this.state.books.map(oldBook => {
-      if (oldBook.id === book.id) {
-        return { ...oldBook, shelf: newShelf};
-      }
-      return oldBook;
-    });
-    this.setState({ books: updatedBooks});
-  };*/
-  handleShelfChange = (book, newShelf) => {
-    console.log("handleShelfChange", book, newShelf);
     const updatedBooks = this.state.books.map(oldBook => {
       if (oldBook.id === book.id) {
         oldBook.shelf = newShelf;
@@ -97,9 +55,6 @@ class SearchPage extends Component {
     this.props.handleShelfChange(book, newShelf);
   };
   render() {
-    //const booksToShow = this.state.books ? this.state.books.filter(book =>
-    //  book.imageLinks.thumbnail !== undefined
-    //) : [];
     return (
       <div className="search-books">
         <div className="search-books-bar">
