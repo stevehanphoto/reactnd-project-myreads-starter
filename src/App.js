@@ -17,18 +17,34 @@ class BooksApp extends React.Component {
     });
   }
   handleShelfChange = (book, newShelf) => {
-    console.log("handleShelfChange", book, newShelf);
     BooksAPI.update(book, newShelf);
-    BooksAPI.getAll().then(books => {
-      this.setState(() => ({
-        books
-      }));
+    const updatedBooks = this.state.books.map(oldBook => {
+      if (oldBook.id === book.id) {
+        return { ...oldBook, shelf: newShelf };
+      }
+      return oldBook;
     });
+    this.setState({ books: updatedBooks });
   };
+/*
+  handleShelfChange = (book, newShelf) => {
+    //console.log("handleShelfChange", book, newShelf);
+    BooksAPI.update(book, newShelf).then(() => {
+        book.shelf = newShelf;
+        this.setState(currentState => ({
+          books: currentState.books.filter(currentBook => currentBook.id !== book.id).concat([book])
+        }));
+      });   
+  };*/
   render() {
     return (
       <div className="app">
-        <Route path="/search" render={({ history }) => <SearchPage />} />
+        <Route 
+          path="/search" 
+          render={({ history }) => 
+          <SearchPage booksOnShelf={this.state.books} handleShelfChange={this.handleShelfChange}
+          />}           
+        />
         <Route
           exact
           path="/"

@@ -15,9 +15,7 @@ class BookShelf extends Component {
   };
   render() {
     const { books, shelf } = this.props;
-    const showingBooks = books.filter(function(book) {
-      return book.shelf === shelf;
-    });
+    const showingBooks = books.filter(book => book.shelf === shelf);
 
     return (
       <div>

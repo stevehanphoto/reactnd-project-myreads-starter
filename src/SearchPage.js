@@ -1,13 +1,19 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types'
 import * as BooksAPI from './BooksAPI'
 import BooksGrid from './BooksGrid'
 
 class SearchPage extends Component {
+  static propTypes = {
+    booksOnShelf: PropTypes.array.isRequired,
+    handleShelfChange: PropTypes.func.isRequired
+  };
   state = {
     books: [],
     query: ""
-  };/*
+  };
+  /*
   componentDidMount() {
     console.log("componentDidMount()");
     BooksAPI.search(this.state.query).then(books => {
@@ -17,40 +23,83 @@ class SearchPage extends Component {
     });
   }*/
   /*
-  getDervivedStateFromProps(state) {
-    console.log("getDervivedStateFromProps", state);
-            BooksAPI.search(this.state.query)
-            .then((books) => {
-                this.setState(() => ({
-                    books
-                }))
-                console.log(books)
-            }
+  isOnShelf = (book) => {
+    this.props.booksOnShelf(bookOnShelf => {
+      if (bookOnShelf.id === book.id) {
+        book.shelf = bookOnShelf.shelf;
+        return book;
+      };
+      book.shelf = 'none'
+      return book;
+    });
   }*/
-  /*componentDidUpdate() {
-    console.log("componentDidUpdate");
-    BooksAPI.search(this.state.query)
-      .then((books) => {
-          this.setState(() => ({
-              books
-          }));
-          console.log(books)
-      }
-      return null;
-  }*/
-  updateQuery = query => {
-    this.setState(() => ({
-      query: query
-    }));
 
-    /* Should I put this in a Lifecycle method? */
-    BooksAPI.search(this.state.query).then(books => {
-      this.setState(() => ({
-        books
+  updateQuery = query => {
+    this.setState({ query: query });
+    this.searchBook(query);
+  }
+  getShelf = id => {
+    const book = this.props.booksOnShelf.filter((book) => book.id === id);
+    //console.log(id, book)
+    return book.length ? book[0].shelf : null;
+//    return book.length ? book[0].shelf : 'none';
+  };
+  searchBook(query) {
+    if (query && query.length > 0) {
+      BooksAPI.search(query)
+        .then(books => {
+          const booksWithShelfInfo = books.map(book => {
+            book.shelf = this.getShelf(book.id);
+            return book
+          });
+          this.setState({ books: booksWithShelfInfo });
+        })
+        .catch((err) => {
+          console.log(err);
+          this.resetSearch();
+        });
+    }
+  };
+  resetSearch() {
+    this.setState({ books: [] });
+  }
+
+/*  handleShelfChange = (book, newShelf) => {
+    //console.log("handleShelfChange", book, newShelf);
+    BooksAPI.update(book, newShelf).then(() => {
+      book.shelf = newShelf;
+      this.setState(currentState => ({
+        books: currentState.books.filter(currentBook => currentBook.id !== book.id).concat([book])
       }));
     });
+  };*/
+  /*
+  handleShelfChange = (book, newShelf) => {
+    BooksAPI.update(book, newShelf);
+    const updatedBooks = this.state.books.map(oldBook => {
+      if (oldBook.id === book.id) {
+        return { ...oldBook, shelf: newShelf};
+      }
+      return oldBook;
+    });
+    this.setState({ books: updatedBooks});
+  };*/
+  handleShelfChange = (book, newShelf) => {
+    console.log("handleShelfChange", book, newShelf);
+    const updatedBooks = this.state.books.map(oldBook => {
+      if (oldBook.id === book.id) {
+        oldBook.shelf = newShelf;
+      }
+      return oldBook
+    });
+    this.setState({ books: updatedBooks });
+
+    this.props.handleShelfChange(book, newShelf);
   };
   render() {
+    //const booksToShow = this.state.books ? this.state.books.filter(book =>
+    //  book.imageLinks.thumbnail !== undefined
+    //) : [];
     return (
       <div className="search-books">
         <div className="search-books-bar">
@@ -58,14 +107,6 @@ class SearchPage extends Component {
             Close
           </Link>
           <div className="search-books-input-wrapper">
-            {/*
-                  NOTES: The search from BooksAPI is limited to a particular set of search terms.
-                  You can find these search terms here:
-                  https://github.com/udacity/reactnd-project-myreads-starter/blob/master/SEARCH_TERMS.md
-
-                  However, remember that the BooksAPI.search method DOES search by title or author. So, don't worry if
-                  you don't find a specific author or title. Every search is limited by search terms.
-                */}
             <input
               type="text"
               placeholder="Search by title or author"
@@ -76,7 +117,11 @@ class SearchPage extends Component {
         </div>
         <div className="search-books-results">
           <ol className="books-grid"></ol>
-          {this.state.books && <BooksGrid books={this.state.books} />}
+          {this.state.books && 
+          <BooksGrid 
+            books={this.state.books} 
+            handleShelfChange={this.handleShelfChange}             
+          />}
         </div>
       </div>
     );
