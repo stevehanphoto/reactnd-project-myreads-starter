@@ -14,7 +14,7 @@ npm install
 
 npm start
 
-Go to http://localhost:3000 in your browser
+Go to http://localhost:3000 on your browser
 
 ## Project Folder Structure
 ```bash
@@ -24,19 +24,19 @@ Go to http://localhost:3000 in your browser
 ├── package.json # npm package manager file.
 ├── public
 │   ├── favicon.ico # React Icon.
-│   └── index.html # DO NOT MODIFY
+│   └── index.html # Not modified.
 └── src
     ├── App.css # Styles for the app.
     ├── App.js # This is the root of the app.
     ├── App.test.js # Used for testing. Provided with Create React App. Used currently used.
     ├── BooksAPI.js # A JavaScript API to communicate with Udacity backend.
     ├── components
-    │   ├── SearchPage.js # Shows books based on user's search query input
-    │   ├── BookShelf.js # Shows books on a given shelf with titled shelf name
-    │   ├── BooksGrid.js # Shows all books
-    │   ├── Book.js # Shows a given book
-    │   ├── BookCover.js # Shows a book cover
-    │   └── BookShelfChanger.js # Shows shelf given book is on and option to change shelf
+    │   ├── SearchPage.js # Shows books based on user's search query input.
+    │   ├── BookShelf.js # Shows books on a given shelf with shelf name as title.
+    │   ├── BooksGrid.js # Shows all books given a array of books.
+    │   ├── Book.js # Shows a given book with book title and author(s),
+    │   ├── BookCover.js # Shows a given book cover and a generic grey cover if none exist.
+    │   └── BookShelfChanger.js # Shows which shelf a given book is on and provides option to change shelf.
     ├── icons # Images for the app.
     │   ├── add.svg
     │   ├── arrow-back.svg
