@@ -2,7 +2,7 @@
 
 This project is for the Udacity React Nanodegree's React Fundamentals section of the course.
 
-Instructions to run on your local machine:
+## Instructions to run:
 
 git clone https://github.com/stevehanphoto/reactnd-project-myreads-starter.git
 
