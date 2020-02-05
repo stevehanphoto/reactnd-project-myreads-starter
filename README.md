@@ -31,12 +31,16 @@ Go to http://localhost:3000 on your browser
     ├── App.test.js # Used for testing. Provided with Create React App. Used currently used.
     ├── BooksAPI.js # A JavaScript API to communicate with Udacity backend.
     ├── components
+    │   ├── HomePage.js # Home page of the app.
     │   ├── SearchPage.js # Shows books based on user's search query input.
+    │   ├── TitleHeader.js # Shows title header and link back to homepage.
+    │   ├── 404Page.js # Shows 404 message.
     │   ├── BookShelf.js # Shows books on a given shelf with shelf name as title.
     │   ├── BooksGrid.js # Shows all books given a array of books.
-    │   ├── Book.js # Shows a given book with book title and author(s),
+    │   ├── Book.js # Shows a given book with book title and author(s).
     │   ├── BookCover.js # Shows a given book cover and a generic grey cover if none exist.
     │   └── BookShelfChanger.js # Shows which shelf a given book is on and provides option to change shelf.
+    
     ├── icons # Images for the app.
     │   ├── add.svg
     │   ├── arrow-back.svg
