@@ -34,7 +34,7 @@ Go to http://localhost:3000 on your browser
     │   ├── HomePage.js # Home page of the app.
     │   ├── SearchPage.js # Shows books based on user's search query input.
     │   ├── TitleHeader.js # Shows title header and link back to homepage.
-    │   ├── 404Page.js # Shows 404 message.
+    │   ├── Page404.js # Shows 404 message.
     │   ├── BookShelf.js # Shows books on a given shelf with shelf name as title.
     │   ├── BooksGrid.js # Shows all books given a array of books.
     │   ├── Book.js # Shows a given book with book title and author(s).
