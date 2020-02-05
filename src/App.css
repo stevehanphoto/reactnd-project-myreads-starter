@@ -24,6 +24,14 @@ body, .app {
   color: white;
 }
 
+.list-books-title a:link {
+  text-decoration: none;
+}
+
+.list-books-title h1:hover {
+  opacity: 0.9;
+}
+
 .list-books-content {
   padding: 0 0 80px;
   flex: 1;
@@ -195,4 +203,10 @@ button:active {
   padding: 20px 10px 0;
   text-align: center;
   font-size: 0.8em;
+}
+
+/* 404 (i.e. Invalid Page) */
+.message-404 {
+  text-align: center;
+  margin: 2rem;
 }

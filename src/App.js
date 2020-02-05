@@ -1,9 +1,10 @@
 import React from 'react'
-import { Route, Link } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import * as BooksAPI from './BooksAPI'
 import './App.css'
-import BookShelf from './components/BookShelf'
+import HomePage from './components/HomePage'
 import SearchPage from './components/SearchPage'
+import InvalidPage from './components/InvalidPage'
 
 class BooksApp extends React.Component {
   state = {
@@ -29,45 +30,24 @@ class BooksApp extends React.Component {
   render() {
     return (
       <div className="app">
-        <Route 
-          path="/search" 
-          render={({ history }) => 
-          <SearchPage booksOnShelf={this.state.books} handleShelfChange={this.handleShelfChange}
-          />}           
-        />
-        <Route
-          exact
-          path="/"
-          render={() => (
-            <div className="list-books">
-              <div className="list-books-title">
-                <h1>MyReads</h1>
-              </div>
-              <div className="list-books-content">
-                <div>
-                  <BookShelf
-                    shelf={"currentlyReading"}
-                    books={this.state.books}
-                    handleShelfChange={this.handleShelfChange}
-                  />
-                  <BookShelf
-                    shelf={"wantToRead"}
-                    books={this.state.books}
-                    handleShelfChange={this.handleShelfChange}
-                  />
-                  <BookShelf
-                    shelf={"read"}
-                    books={this.state.books}
-                    handleShelfChange={this.handleShelfChange}
-                  />
-                </div>
-              </div>
-              <div className="open-search">
-                <Link to="/search">Add a book</Link>
-              </div>
-            </div>
-          )}
-        />
+        <Switch>
+          <Route
+            path="/search"
+            render={({ history }) =>
+              <SearchPage booksOnShelf=
+                {this.state.books} handleShelfChange={this.handleShelfChange}
+              />}
+          />
+          <Route
+            exact
+            path="/"
+            render={() =>
+              <HomePage books=
+                {this.state.books} handleShelfChange={this.handleShelfChange} />
+            }
+          />
+          <Route render={() => <InvalidPage />} />
+        </Switch>
       </div>
     );
   }

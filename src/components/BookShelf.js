@@ -11,7 +11,8 @@ const BookShelf = (props) => {
         <h2 className="bookshelf-title">{_.startCase(props.shelf)}</h2>
         <BooksGrid
           books={showingBooks}
-          handleShelfChange={(book, newShelf) => props.handleShelfChange(book, newShelf) }
+          handleShelfChange={
+            (book, newShelf) => props.handleShelfChange(book, newShelf) }
         />
       </div>
     </div>

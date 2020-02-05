@@ -4,14 +4,15 @@ import BookCover from "./BookCover";
 import BookShelfChanger from "./BookShelfChanger";
 
 const Book = (props) => {
-  function handleShelfChange(newShelf) {
-    props.handleShelfChange(props.book, newShelf);
-  };
   return (
     <div className="book">
       <div className="book-top">
         <BookCover book={props.book}/>
-        <BookShelfChanger book={props.book} onShelfChange={handleShelfChange} />
+        <BookShelfChanger 
+          book={props.book} 
+          onShelfChange={
+            (newShelf) => props.handleShelfChange(props.book, newShelf)} 
+        />
       </div>
       <div className="book-title">{props.book.title}</div>
       <div className="book-authors">{props.book.authors && props.book.authors.join(', ')}</div>
