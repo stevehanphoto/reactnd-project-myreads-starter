@@ -4,7 +4,7 @@ import * as BooksAPI from './BooksAPI'
 import './App.css'
 import HomePage from './components/HomePage'
 import SearchPage from './components/SearchPage'
-import InvalidPage from './components/InvalidPage'
+import Page404 from './components/Page404'
 
 class BooksApp extends React.Component {
   state = {
@@ -46,7 +46,7 @@ class BooksApp extends React.Component {
                 {this.state.books} handleShelfChange={this.handleShelfChange} />
             }
           />
-          <Route render={() => <InvalidPage />} />
+          <Route render={() => <Page404 />} />
         </Switch>
       </div>
     );

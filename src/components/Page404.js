@@ -1,7 +1,7 @@
 import React from 'react'
 import TitleHeader from './TitleHeader';
 
-const InvalidPage = () => {
+const Page404 = () => {
     return (
         <div>
             <TitleHeader />
@@ -12,4 +12,4 @@ const InvalidPage = () => {
     )
 } 
 
-export default InvalidPage
+export default Page404
