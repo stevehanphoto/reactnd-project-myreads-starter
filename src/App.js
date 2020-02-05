@@ -19,12 +19,17 @@ class BooksApp extends React.Component {
   }
   handleShelfChange = (book, newShelf) => {
     BooksAPI.update(book, newShelf);
+    let isBookOnShelf = false;
     const updatedBooks = this.state.books.map(oldBook => {
       if (oldBook.id === book.id) {
+        isBookOnShelf = true;
         return { ...oldBook, shelf: newShelf };
       }
       return oldBook;
     });
+    if (!isBookOnShelf) {
+      updatedBooks.push({...book, shelf: newShelf});
+    }
     this.setState({ books: updatedBooks });
   };
   render() {
