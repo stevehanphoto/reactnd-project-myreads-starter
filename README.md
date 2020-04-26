@@ -1,12 +1,12 @@
 # MyReads Project
 
-This project was built for the Udacity React Nanodegree's React Fundamentals section of the course.  This is a bookshelf app that lets you to organize books that you have read.
+This project was built for the Udacity React Nanodegree's React Fundamentals section of the course.  This is a bookshelf web app that lets you to organize books that you have read.  The project uses React Router and PropTypes for typechecking in child components.
 
 ## Instructions to run:
 
-This project is hosted at [https://udacity-myreads-stevehan.netlify.app/](https://udacity-myreads-stevehan.netlify.app/)
+This project is deployed for you try out at [https://udacity-myreads-stevehan.netlify.app/](https://udacity-myreads-stevehan.netlify.app/)
 
-The project uses [Node.js](https://nodejs.org/en/) and the Create-React-App starter.  Once Node is installed you can install the app locally by running:
+If you like to run the app locally first install [Node.js](https://nodejs.org/en/) if you don't already have it installed.  Once Node is installed you can install the app by running:
 ```
 git clone https://github.com/stevehanphoto/reactnd-project-myreads-starter.git
 ```
@@ -22,7 +22,6 @@ Go to http://localhost:3000 on your browser
 
 ## Project Folder Structure
 ```
-├── CONTRIBUTING.md
 ├── README.md - This file.
 ├── SEARCH_TERMS.md # The whitelisted short collection of available search terms.
 ├── package.json # npm package manager file.
