@@ -1,23 +1,27 @@
 # MyReads Project
 
-This project is for the Udacity React Nanodegree's React Fundamentals section of the course.
+This project was built for the Udacity React Nanodegree's React Fundamentals section of the course.  The purpose of the project is to demonstrate understanding of the basic structure and operation of a React-based app.
 
 ## Instructions to run:
 
+The project uses Node.js and the Create-React-App starter.  Once Node is installed you can install the app locally by running:
+```
 git clone https://github.com/stevehanphoto/reactnd-project-myreads-starter.git
+```
 
 cd in to reactnd-project-myreads-starter project folder
 
 run the commands:
 
+```
 npm install
 
 npm start
-
+```
 Go to http://localhost:3000 on your browser
 
 ## Project Folder Structure
-```bash
+```
 ├── CONTRIBUTING.md
 ├── README.md - This file.
 ├── SEARCH_TERMS.md # The whitelisted short collection of available search terms.
@@ -47,7 +51,17 @@ Go to http://localhost:3000 on your browser
     │   └── arrow-drop-down.svg
     ├── index.css # Global styles.
     └── index.js # Used for DOM rendering only.
-    
+```
+
+## Resources
+
+- [Project Starter Template](https://github.com/udacity/reactnd-project-myreads-starter)
+- [Project Rubric](https://review.udacity.com/#!/rubrics/918/view)
+  
+
+### Search Terms
+'Android', 'Art', 'Artificial Intelligence', 'Astronomy', 'Austen', 'Baseball', 'Basketball', 'Bhagat', 'Biography', 'Brief', 'Business', 'Camus', 'Cervantes', 'Christie', 'Classics', 'Comics', 'Cook', 'Cricket', 'Cycling', 'Desai', 'Design', 'Development', 'Digital Marketing', 'Drama', 'Drawing', 'Dumas', 'Education', 'Everything', 'Fantasy', 'Film', 'Finance', 'First', 'Fitness', 'Football', 'Future', 'Games', 'Gandhi', 'Homer', 'Horror', 'Hugo', 'Ibsen', 'Journey', 'Kafka', 'King', 'Lahiri', 'Larsson', 'Learn', 'Literary Fiction', 'Make', 'Manage', 'Marquez', 'Money', 'Mystery', 'Negotiate', 'Painting', 'Philosophy', 'Photography', 'Poetry', 'Production', 'Programming', 'React', 'Redux', 'River', 'Robotics', 'Rowling', 'Satire', 'Science Fiction', 'Shakespeare', 'Singh', 'Swimming', 'Tale', 'Thrun', 'Time', 'Tolstoy', 'Travel', 'Ultimate', 'Virtual Reality', 'Web Development', 'iOS'
+
 ## Contributing
 
 This repository is a fork of the starter code for _all_ Udacity students.
