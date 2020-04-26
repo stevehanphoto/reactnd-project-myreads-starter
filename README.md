@@ -1,17 +1,17 @@
 # MyReads Project
 
-This project was built for the Udacity React Nanodegree's React Fundamentals section of the course.  The purpose of the project is to demonstrate understanding of the basic structure and operation of a React-based app.
+This project was built for the Udacity React Nanodegree's React Fundamentals section of the course.  This is a bookshelf app that lets you to organize books that you have read.
 
 ## Instructions to run:
 
-The project uses Node.js and the Create-React-App starter.  Once Node is installed you can install the app locally by running:
+This project is hosted at [https://udacity-myreads-stevehan.netlify.app/](https://udacity-myreads-stevehan.netlify.app/)
+
+The project uses [Node.js](https://nodejs.org/en/) and the Create-React-App starter.  Once Node is installed you can install the app locally by running:
 ```
 git clone https://github.com/stevehanphoto/reactnd-project-myreads-starter.git
 ```
 
-cd in to reactnd-project-myreads-starter project folder
-
-run the commands:
+cd in to the reactnd-project-myreads-starter project folder and run the commands:
 
 ```
 npm install
@@ -61,8 +61,3 @@ Go to http://localhost:3000 on your browser
 
 ### Search Terms
 'Android', 'Art', 'Artificial Intelligence', 'Astronomy', 'Austen', 'Baseball', 'Basketball', 'Bhagat', 'Biography', 'Brief', 'Business', 'Camus', 'Cervantes', 'Christie', 'Classics', 'Comics', 'Cook', 'Cricket', 'Cycling', 'Desai', 'Design', 'Development', 'Digital Marketing', 'Drama', 'Drawing', 'Dumas', 'Education', 'Everything', 'Fantasy', 'Film', 'Finance', 'First', 'Fitness', 'Football', 'Future', 'Games', 'Gandhi', 'Homer', 'Horror', 'Hugo', 'Ibsen', 'Journey', 'Kafka', 'King', 'Lahiri', 'Larsson', 'Learn', 'Literary Fiction', 'Make', 'Manage', 'Marquez', 'Money', 'Mystery', 'Negotiate', 'Painting', 'Philosophy', 'Photography', 'Poetry', 'Production', 'Programming', 'React', 'Redux', 'River', 'Robotics', 'Rowling', 'Satire', 'Science Fiction', 'Shakespeare', 'Singh', 'Swimming', 'Tale', 'Thrun', 'Time', 'Tolstoy', 'Travel', 'Ultimate', 'Virtual Reality', 'Web Development', 'iOS'
-
-## Contributing
-
-This repository is a fork of the starter code for _all_ Udacity students.
-
