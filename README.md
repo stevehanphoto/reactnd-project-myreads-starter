@@ -1,6 +1,6 @@
 # MyReads Project
 
-This project was built for the Udacity React Nanodegree's React Fundamentals section of the course.  This is a bookshelf web app that lets you to organize books that you have read.  The project uses React Router and PropTypes for typechecking in child components.
+This project was built for the Udacity React Nanodegree's React Fundamentals section of the course.  This is a bookshelf web app that lets you to organize books that you have read.  The project uses React Router for routing and PropTypes for typechecking in child components.
 
 ## Instructions to run:
 
@@ -8,10 +8,10 @@ This project is deployed for you try out at [https://udacity-myreads-stevehan.ne
 
 If you like to run the app locally first install [Node.js](https://nodejs.org/en/) if you don't already have it installed.  Once Node is installed you can install the app by running:
 ```
-git clone https://github.com/stevehanphoto/reactnd-project-myreads-starter.git
+git clone https://github.com/stevehanphoto/reactnd-project-myreads.git
 ```
 
-cd in to the reactnd-project-myreads-starter project folder and run the commands:
+cd in to the **reactnd-project-myreads** project folder and run the commands:
 
 ```
 npm install
@@ -42,8 +42,7 @@ Go to http://localhost:3000 on your browser
     │   ├── BooksGrid.js # Shows all books given a array of books.
     │   ├── Book.js # Shows a given book with book title and author(s).
     │   ├── BookCover.js # Shows a given book cover and a generic grey cover if none exist.
-    │   └── BookShelfChanger.js # Shows which shelf a given book is on and provides option to change shelf.
-    
+    │   └── BookShelfChanger.js # Shows which shelf a given book is on and provides option to change shelf.    
     ├── icons # Images for the app.
     │   ├── add.svg
     │   ├── arrow-back.svg
@@ -53,10 +52,8 @@ Go to http://localhost:3000 on your browser
 ```
 
 ## Resources
-
 - [Project Starter Template](https://github.com/udacity/reactnd-project-myreads-starter)
 - [Project Rubric](https://review.udacity.com/#!/rubrics/918/view)
   
-
-### Search Terms
+## Search Terms
 'Android', 'Art', 'Artificial Intelligence', 'Astronomy', 'Austen', 'Baseball', 'Basketball', 'Bhagat', 'Biography', 'Brief', 'Business', 'Camus', 'Cervantes', 'Christie', 'Classics', 'Comics', 'Cook', 'Cricket', 'Cycling', 'Desai', 'Design', 'Development', 'Digital Marketing', 'Drama', 'Drawing', 'Dumas', 'Education', 'Everything', 'Fantasy', 'Film', 'Finance', 'First', 'Fitness', 'Football', 'Future', 'Games', 'Gandhi', 'Homer', 'Horror', 'Hugo', 'Ibsen', 'Journey', 'Kafka', 'King', 'Lahiri', 'Larsson', 'Learn', 'Literary Fiction', 'Make', 'Manage', 'Marquez', 'Money', 'Mystery', 'Negotiate', 'Painting', 'Philosophy', 'Photography', 'Poetry', 'Production', 'Programming', 'React', 'Redux', 'River', 'Robotics', 'Rowling', 'Satire', 'Science Fiction', 'Shakespeare', 'Singh', 'Swimming', 'Tale', 'Thrun', 'Time', 'Tolstoy', 'Travel', 'Ultimate', 'Virtual Reality', 'Web Development', 'iOS'
